@@ -8,8 +8,8 @@ const [Theme, setTheme] = useState('light')
 
   return (
     <>
-      <div className='daek:bg-black relative'>
-        <Navbar theme={Theme} setthem={setTheme}/>
+      <div className='dark:bg-black relative'>
+        <Navbar theme={Theme} settheme={setTheme}/>
       </div>
     </>
   );

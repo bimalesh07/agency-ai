@@ -1,7 +1,8 @@
 import React from 'react'
 import assets from '../assets/assets';
 import { useState } from 'react';
-const Navbar = ({theme, setthem}) => {
+import ThemeToggle from './ThemeToggle'
+const Navbar = ({theme, settheme}) => {
 
    const [Sidebar, setSidebar] = useState(false)
 
@@ -13,23 +14,55 @@ const Navbar = ({theme, setthem}) => {
           className="w-32 sw:w-40"
           alt=" "
         ></img>
-        <div className={`text-gray-700 dark:text-white sm:text-sm ${!Sidebar? 'max-sm:w-0 overflow-hidden': 'max-sm:w-60 max-sm:pl-10'} max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col  max-sm:bg-primary max-sm:text-white mac-sm:pt-20 flex sm:items-center gap-5  transition-all`}>
-         <img src={assets.close_icon} alt='' className='w-5 absolute right-4 top-4 sm:hidden' onClick={()=>setSidebar(false)}></img>
-          <a href="#" className=" sm:hover:border-b">
+        <div
+          className={`text-gray-700 dark:text-white sm:text-sm ${
+            !Sidebar ? "max-sm:w-0 overflow-hidden" : "max-sm:w-60 max-sm:pl-10"
+          } max-sm:fixed top-0 bottom-0 right-0 max-sm:min-h-screen max-sm:h-full max-sm:flex-col  max-sm:bg-primary max-sm:text-white mac-sm:pt-20 flex sm:items-center gap-5  transition-all`}
+        >
+          <img
+            src={assets.close_icon}
+            alt=""
+            className="w-5 absolute right-4 top-4 sm:hidden"
+            onClick={() => setSidebar(false)}
+          ></img>
+          <a
+            onClick={() => setSidebar(false)}
+            href="#Home"
+            className=" sm:hover:border-b"
+          >
             Home
-          </a> 
-          <a href="#" className=" sm:hover:border-b">
+          </a>
+          <a
+            onClick={() => setSidebar(false)}
+            href="#Servies"
+            className=" sm:hover:border-b"
+          >
             Servies
           </a>
-          <a href="#" className=" sm:hover:border-b">
+          <a
+            onClick={() => setSidebar(false)}
+            href="#Our-Work"
+            className=" sm:hover:border-b"
+          >
             Our work
           </a>
-          <a href="#" className=" sm:hover:border-b">
+          <a
+            onClick={() => setSidebar(false)}
+            href="#Contact-us"
+            className=" sm:hover:border-b"
+          >
             Testimonial
           </a>
         </div>
-        <div className=' flex items-center gap-2 sm:gap-4'>
-            <img src={theme ==='dark'? assets.menu_icon_dark:assets.menu_icon} alt='' onClick={()=>setSidebar(true)} className='w-8 sm:hidden'></img>
+        <div className=" flex items-center gap-2 sm:gap-4">
+          <ThemeToggle theme={theme} settheme={settheme} />
+          
+          <img
+            src={theme === "dark" ? assets.menu_icon_dark : assets.menu_icon}
+            alt=""
+            onClick={() => setSidebar(true)}
+            className="w-8 sm:hidden"
+          ></img>
           <a
             href="#contact-us"
             className="text-sm max-sm:hidden flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-full cursor-pointer hover:scale-105 transition-all"
