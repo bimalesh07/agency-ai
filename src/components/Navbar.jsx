@@ -56,7 +56,6 @@ const Navbar = ({theme, settheme}) => {
         </div>
         <div className=" flex items-center gap-2 sm:gap-4">
           <ThemeToggle theme={theme} settheme={settheme} />
-          
           <img
             src={theme === "dark" ? assets.menu_icon_dark : assets.menu_icon}
             alt=""
