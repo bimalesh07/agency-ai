@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import assets from '../assets/assets'
 
 const ThemeToggle = ({theme, settheme}) => {
+
 console.log("Theme:", theme, "Showing:", theme === "dark" ? "Sun" : "Moon");
 
 
 useEffect(() => {
-
   if(theme === 'dark'){
     document.documentElement.classList.add('dark')
 
